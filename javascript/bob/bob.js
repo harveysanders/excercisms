@@ -17,6 +17,20 @@ Bob.prototype.hey = function(input) {
 	else
 		return responses[0];
 
+	function allCaps(string) {
+		return string.split('').map(function(character){
+			return character === character.toUpperCase();
+		}).reduce(function(prevBool, currBool){
+			return !prevBool;
+		});
+	}
+
+	function allCaps2(string) {
+		return string.split('').reduce(function(character){
+			return !(character.charCodeAt() >= 65 && character.charCodeAt() <= 90);
+		});
+	}
+
 };
 
 module.exports = Bob;
